@@ -13,7 +13,7 @@ def analizar_y_graficar_funcion_transferencia():
         return np.polyval(num, s) / np.polyval(den, s)
 
     def tipo_sistema():
-        delta = coeficientes[1]**2 - 4*coeficientes[0]*coeficientes[2]
+        delta = coeficientes[1]**2 - 4*coeficientes[0]*coeficientes[2] #ecuacion de la cuadratica
         if delta < 0:
             return 'Sistema subamortiguado'
         elif delta == 0:
