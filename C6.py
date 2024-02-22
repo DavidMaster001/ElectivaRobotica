@@ -23,7 +23,7 @@ fig, axs = plt.subplots(1, 2, figsize=(10, 5))
 
 # Mostrar el primer logo
 axs[0].imshow(cv2.cvtColor(logo1, cv2.COLOR_BGR2RGB))
-axs[0].set_title('Logo 1')
+axs[0].set_title('Lamborgini')
 
 # Dibujar los contornos del primer logo
 for contorno in contornos_logo1:
@@ -32,7 +32,7 @@ for contorno in contornos_logo1:
 
 # Mostrar el segundo logo
 axs[1].imshow(cv2.cvtColor(logo2, cv2.COLOR_BGR2RGB))
-axs[1].set_title('Logo 2')
+axs[1].set_title('Chevrolet')
 
 # Dibujar los contornos del segundo logo
 for contorno in contornos_logo2:
