@@ -13,16 +13,16 @@ def pt100_resistance_to_temperature(resistance):
     return temperature
 
 # Rango de resistencias
-resistances = np.linspace(10, 400, 1000)
+resistencias = np.linspace(10, 400, 1000) #se utiliza para generar un arreglo de números espaciados de manera uniforme en un intervalo especificado
 
 # Convertir resistencias a temperatura
-temperatures = pt100_resistance_to_temperature(resistances)
+temperatures = pt100_resistance_to_temperature(resistencias)
 
 # Graficar
-plt.plot(temperatures, resistances)
+plt.plot(temperatures, resistencias) #grafique temp(x) y resistecia(Y)
 plt.xlabel('Temperatura (°C)')
 plt.ylabel('Resistencia (Ohm)')
-plt.title('Comportamiento de un sensor PT100')
-plt.xlim(-200, 200) 
-plt.grid(True)
-plt.show()
+plt.title('Sensor PT100')
+plt.xlim(-200, 200) #Limitar la grafica 
+plt.grid(True)#la cuadricula
+plt.show()#lo muestre en la pantalla :D

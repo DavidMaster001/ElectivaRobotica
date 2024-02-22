@@ -3,9 +3,10 @@ import matplotlib.pyplot as plt
 
 def analizar_y_graficar_funcion_transferencia(coeficientes):
     def segundo_orden(s):
-        num = coeficientes[0]
-        den = coeficientes[1:]
+        num = np.array([coeficientes[0]])  # Convertir a array de un solo elemento
+        den = np.array(coeficientes[1:])   # Mantener como array si ya tiene más de un elemento
         return np.polyval(num, s) / np.polyval(den, s)
+
 
     def tipo_sistema():
         delta = coeficientes[1]**2 - 4*coeficientes[0]*coeficientes[2]
@@ -16,9 +17,10 @@ def analizar_y_graficar_funcion_transferencia(coeficientes):
         else:
             return 'Sistema sobreamortiguado'
 
+
     def graficar_respuesta():
         t = np.linspace(0, 30, 1000)
-        s = 1j * t
+        s = 1j * t #1j es para representar la i osea la unidad imaginaria
         y = segundo_orden(s)
         plt.plot(t, np.real(y), label='Parte real')
         plt.plot(t, np.imag(y), label='Parte imaginaria')
@@ -33,5 +35,9 @@ def analizar_y_graficar_funcion_transferencia(coeficientes):
     graficar_respuesta()
 
 # Ejemplo de uso
-coeficientes = [1, 1, 1]  # Ejemplo de coeficientes
+coeficientes = [1,2,1]  # Ejemplo de coeficientes
 analizar_y_graficar_funcion_transferencia(coeficientes)
+
+#1,1,0.5 subamortiguado
+#1,1,2 Criticamente amortiguado
+#1,2,1 sobreamortiguado

@@ -18,7 +18,7 @@ for i in range(X):
   # Generar un número aleatorio usando la función randint()
   numero_aleatorio = random.randint(limite_inferior, limite_superior)
   # Agregar el número aleatorio a la lista
-  numeros_aleatorios.append(numero_aleatorio)
+  numeros_aleatorios.append(numero_aleatorio) #Se utiliza para agregar un elemento al final de una lista
 
 # Mostrar la lista con los números aleatorios
 print("Los números aleatorios generados son:", numeros_aleatorios)

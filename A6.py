@@ -4,7 +4,7 @@
 
 def cal_fuerza_ava(presion, diametro_embolo):
     area = (diametro_embolo / 2)**2 * 3.1416  # Área del émbolo en cm^2
-    fuerza = presion * area  # Fuerza en gramos
+    fuerza = presion * area  #Fuerza en gramos
     return fuerza
 
 def cal_fuerza_retro(presion, diametro_embolo, diametro_barra):
