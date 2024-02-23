@@ -13,8 +13,6 @@ xL, yL = zip(*L)
 xA, yA = zip(*A)
 xN, yN = zip(*N)
 
-plt.figure()
-
 plt.plot(xD, yD, 'b-')
 plt.plot(xI, yI, 'b-')
 plt.plot(xL, yL, 'b-')
