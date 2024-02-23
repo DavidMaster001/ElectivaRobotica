@@ -18,9 +18,6 @@ xA2, yA2 = zip(*A2)
 xN, yN = zip(*N)
 xA3, yA3 = zip(*A3)
 
-# Crear un gráfico vacío
-plt.figure()
-
 # Trazar las líneas para cada letra
 plt.plot(xA, yA, 'b-')
 plt.plot(xD, yD, 'b-')
