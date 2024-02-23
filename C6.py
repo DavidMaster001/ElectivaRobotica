@@ -2,41 +2,43 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Cargar imágenes de los logos
-logo1 = cv2.imread('logo1.jpg')
-logo2 = cv2.imread('logo2.jpg')
+Suzuki = cv2.imread('logo1.png', cv2.IMREAD_GRAYSCALE)
+lamborgini = cv2.imread('logo2.png', cv2.IMREAD_GRAYSCALE)
 
-# Convertir las imágenes a escala de grises
-logo1_gris = cv2.cvtColor(logo1, cv2.COLOR_BGR2GRAY)
-logo2_gris = cv2.cvtColor(logo2, cv2.COLOR_BGR2GRAY)
+thres_suzuki = cv2.threshold(Suzuki, 240, 255, cv2.THRESH_BINARY)
+thres_lamborgini = cv2.threshold(lamborgini, 240, 255, cv2.THRESH_BINARY)
 
-# Umbralizar las imágenes para obtener los contornos
-_, logo1_bin = cv2.threshold(logo1_gris, 127, 255, cv2.THRESH_BINARY)
-_, logo2_bin = cv2.threshold(logo2_gris, 127, 255, cv2.THRESH_BINARY)
+contornos_suzuki = cv2.findContours(thres_suzuki, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+contornos_lamborgini = cv2.findContours(thres_lamborgini, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-# Encontrar contornos en las imágenes umbralizadas
-contornos_logo1, _ = cv2.findContours(logo1_bin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-contornos_logo2, _ = cv2.findContours(logo2_bin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+coord_x_suzuki = []
+coord_y_susuki = []
+for contorno in contornos_suzuki:
+    for punto in contorno:
+        x, y = punto[0]
+        coord_x_suzuki.append(x)
+        coord_y_susuki.append(y)
 
-# Crear una imagen en blanco para dibujar los contornos
-contornos_img1 = np.zeros_like(logo1)
-contornos_img2 = np.zeros_like(logo2)
+coord_x_lamborgini = []
+coord_y_lamborgini = []
+for contorno in contornos_lamborgini:
+    for punto in contorno:
+        x, y = punto[0]
+        coord_x_lamborgini.append(x)
+        coord_y_lamborgini.append(y)
 
-# Dibujar los contornos en las imágenes en blanco
-cv2.drawContours(contornos_img1, contornos_logo1, -1, (255, 255, 255), 2)
-cv2.drawContours(contornos_img2, contornos_logo2, -1, (255, 255, 255), 2)
+plt.figure(figsize=(12, 6))
+plt.subplot(1, 2, 1)
+plt.scatter(coord_x_suzuki, coord_y_susuki, s=1, color='red')
+plt.title('Contorno del logo de suzuki')
+plt.xlabel('Coordenada X')
+plt.ylabel('Coordenada Y')
 
-# Mostrar las imágenes con los contornos superpuestos
-fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+plt.subplot(1, 2, 2)
+plt.scatter(coord_x_lamborgini, coord_y_lamborgini, s=1, color='blue')
+plt.title('Contorno del logo de Lamborgini')
+plt.xlabel('Coordenada X')
+plt.ylabel('Coordenada Y')
 
-axs[0].imshow(cv2.cvtColor(logo1, cv2.COLOR_BGR2RGB))
-axs[0].imshow(contornos_img1, alpha=0.5, cmap='gray')
-axs[0].set_title('Lamborghini')
-axs[0].axis('off')
-
-axs[1].imshow(cv2.cvtColor(logo2, cv2.COLOR_BGR2RGB))
-axs[1].imshow(contornos_img2, alpha=0.5, cmap='gray')
-axs[1].set_title('Chevrolet')
-axs[1].axis('off')
-
+plt.tight_layout()
 plt.show()
