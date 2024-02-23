@@ -1,45 +1,49 @@
+import cv2
+import numpy as np
 import matplotlib.pyplot as plt
 
-# Create a new figure
-fig, ax = plt.subplots()
+# Leer las imágenes en escala de grises
+Suzuki = cv2.imread('logo1.png', cv2.IMREAD_GRAYSCALE)
+lamborgini = cv2.imread('logo2.png', cv2.IMREAD_GRAYSCALE)
 
-# Set the size of the figure
-fig.set_size_inches(5, 2)
+# Aplicar umbralización para obtener imágenes binarias
+_, thres_suzuki = cv2.threshold(Suzuki, 240, 255, cv2.THRESH_BINARY)
+_, thres_lamborgini = cv2.threshold(lamborgini, 240, 255, cv2.THRESH_BINARY)
 
-# Remove the spines (i.e., the lines around the edges) of the plot
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
-ax.spines['bottom'].set_position('zero')
-ax.spines['left'].set_position('zero')
+# Encontrar los contornos en las imágenes binarias
+contornos_suzuki, _ = cv2.findContours(thres_suzuki, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+contornos_lamborgini, _ = cv2.findContours(thres_lamborgini, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-# Set the x and y limits of the plot
-ax.set_xlim(-1, 9)
-ax.set_ylim(-2, 5)
+# Crear listas para almacenar las coordenadas de los puntos de los contornos
+coord_x_suzuki = []
+coord_y_suzuki = []
+for contorno in contornos_suzuki:
+    for punto in contorno:
+        x, y = punto[0]
+        coord_x_suzuki.append(x)
+        coord_y_suzuki.append(y)
 
-# Draw the letters of the name "DAVID"
-ax.text(1, 1, "D", ha='center', va='center')
-ax.text(2, 1, "A", ha='center', va='center')
-ax.text(3, 1, "V", ha='center', va='center')
-ax.text(4, 1, "I", ha='center', va='center')
-ax.text(5, 1, "D", ha='center', va='center')
+coord_x_lamborgini = []
+coord_y_lamborgini = []
+for contorno in contornos_lamborgini:
+    for punto in contorno:
+        x, y = punto[0]
+        coord_x_lamborgini.append(x)
+        coord_y_lamborgini.append(y)
 
-ax.text(1, 2, "D", ha='center', va='center')
-ax.text(2, 2, "I", ha='center', va='center')
-ax.text(3, 2, "L", ha='center', va='center')
-ax.text(4, 2, "A", ha='center', va='center')
-ax.text(5, 2, "N", ha='center', va='center')
+# Crear un gráfico de dispersión para visualizar los contornos
+plt.figure(figsize=(18, 9))
+plt.subplot(1, 2, 1)
+plt.scatter(coord_x_suzuki, coord_y_suzuki, s=1, color='b')
+plt.title('Contorno del logo de Suzuki')
+plt.xlabel('Coordenada X')
+plt.ylabel('Coordenada Y')
 
-ax.text(1, 3, "A", ha='center', va='center')
-ax.text(2, 3, "D", ha='center', va='center')
-ax.text(3, 3, "R", ha='center', va='center')
-ax.text(4, 3, "I", ha='center', va='center')
-ax.text(5, 3, "A", ha='center', va='center')
-ax.text(6, 3, "N", ha='center', va='center')
-ax.text(7, 3, "A", ha='center', va='center')
+plt.subplot(1, 2, 2)
+plt.scatter(coord_x_lamborgini, coord_y_lamborgini, s=1, color='b')
+plt.title('Contorno del logo de Lamborghini')
+plt.xlabel('Coordenada X')
+plt.ylabel('Coordenada Y')
 
-# Remove the tick marks from the plot
-ax.set_xticks([])
-ax.set_yticks([])
-
-# Show the plot
+plt.tight_layout()
 plt.show()
