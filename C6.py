@@ -8,9 +8,8 @@ audi = cv2.imread('logo2.png', cv2.IMREAD_GRAYSCALE)
 
 # Aplicar umbralización para obtener imágenes binarias
 _, thres_Renault = cv2.threshold(Renault, 240, 255, cv2.THRESH_BINARY)
-_, thres_audi = cv2.threshold(audi, 240, 255, cv2.THRESH_BINARY)
+_, thres_audi = cv2.threshold(audi, 240, 255, cv2.THRESH_BINARY)# Encontrar los contornos en las imágenes binarias
 
-# Encontrar los contornos en las imágenes binarias
 contornos_Renault, _ = cv2.findContours(thres_Renault, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 contornos_audi, _ = cv2.findContours(thres_audi, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 

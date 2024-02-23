@@ -27,10 +27,12 @@ def graficar_carga_descarga(tiempo, carga, descarga):
 V = float(input("Ingrese el valor de voltaje (V): "))
 C = float(input("Ingrese el valor de capacitancia (µF): "))
 R = float(input("Ingrese el valor de resistencia (Ω): "))
+
+C = C*1e-6
 tiempo = np.linspace(0, 5*R*C, 1000)  # Tiempo de 0 a 5*tau
 
 # Cálculo de carga y descarga
-carga, descarga = carga_descarga_RC(V, C*1e-6, R, tiempo)
+carga, descarga = carga_descarga_RC(V, C, R, tiempo)
 
 # Gráfico
 graficar_carga_descarga(tiempo, carga, descarga)

@@ -3,8 +3,6 @@
 #vectores previamente inicializados.
 
 import numpy as np
-#
-
 
 # Vectores inicializados
 vector_a = np.array([1, 2, 3])
