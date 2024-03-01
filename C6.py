@@ -31,7 +31,7 @@ for contorno in contornos_audi:
         coord_y_audi.append(y)
 
 # Crear un gráfico de dispersión para visualizar los contornos
-plt.figure(figsize=(18, 9))
+plt.figure(figsize=(12, 6))
 plt.subplot(1, 2, 1)
 plt.scatter(coord_x_Renault, coord_y_Renault, s=1, color='b')
 plt.title('Contorno del logo de Renault')
