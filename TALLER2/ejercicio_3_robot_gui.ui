@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>564</width>
+    <height>834</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Robots</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QComboBox" name="comboBox">
+        <item>
+         <property name="text">
+          <string>Cartesiano</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Esférico</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cilíndrico</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_info">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGraphicsView" name="view"/>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Adriana Bolivar Bolivar
+Jonathan David Pinto Bucuru
+Dyllam Arévalo Velásquez</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="lbl_imagen">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>logo.jpg</pixmap>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="mbr_principal">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>564</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="mnu_archivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="mni_salir"/>
+   </widget>
+   <addaction name="mnu_archivo"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="mni_salir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>758</width>
+    <height>630</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Ejercicio 1</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Operaciones trigonométricas</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QRadioButton" name="rb_seno">
+             <property name="text">
+              <string>Seno</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rb_coseno">
+             <property name="text">
+              <string>Coseno</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rb_tangente">
+             <property name="text">
+              <string>Tangente</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rb_cotangente">
+             <property name="text">
+              <string>Cotangente</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rb_secante">
+             <property name="text">
+              <string>Secante</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rb_cosecante">
+             <property name="text">
+              <string>Cosecante</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QFormLayout" name="formLayout_2">
+           <item row="1" column="0">
+            <widget class="QLabel" name="lbl_angulo">
+             <property name="text">
+              <string>Ángulo:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="input_angulo"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="btn_calcular_trig">
+             <property name="text">
+              <string>Calcular</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLabel" name="label_resultado_trig">
+             <property name="text">
+              <string>Resultado:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>Operaciones Aritméticas</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QRadioButton" name="rb_suma">
+               <property name="text">
+                <string>Suma</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rb_resta">
+               <property name="text">
+                <string>Resta</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rb_multiplicacion">
+               <property name="text">
+                <string>Multiplicación</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rb_division">
+               <property name="text">
+                <string>División</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="rb_residuo">
+               <property name="text">
+                <string>Residuo</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <layout class="QFormLayout" name="formLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="lbl_numero1_arit">
+             <property name="text">
+              <string>Número 1:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="input_num1"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lbl_numero2_arit">
+             <property name="text">
+              <string>Número 2:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="input_num2"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="btn_calcular_arit">
+             <property name="text">
+              <string>Calcular</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLabel" name="label_resultado_arit">
+             <property name="text">
+              <string>Resultado:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Adriana Bolivar Bolivar
+Jonathan David Pinto Bucuru
+Dyllam Arévalo Velásquez</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="lbl_imagen">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>logo.jpg</pixmap>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="mbrPrincipal">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>758</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="mnuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="mniSalir"/>
+   </widget>
+   <addaction name="mnuArchivo"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="mniSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
