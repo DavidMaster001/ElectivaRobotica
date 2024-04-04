@@ -43,6 +43,9 @@ class VentanaPrincipal(QMainWindow):
         imagen = QPixmap("logo.jpg")
         self.ui.lbl_imagen.setPixmap(imagen)
 
+        # Creamos el canvas de matplotlib
+        self.canvas = MplCanvas(self, width=5, height=4, dpi=100)
+
     def update_info(self, index):
         robot_info = [
             {"name": "Cartesiano", "joints": "3 articulaciones P-P-P", "image": "robot_cartesiano.jpg"},
@@ -54,11 +57,10 @@ class VentanaPrincipal(QMainWindow):
         self.ui.label_info.setText(f"{info['name']}:\n{info['joints']}")
 
         imagen = mpimg.imread(info['image'])
-
-        self.canvas = MplCanvas(self, width=5, height=4, dpi=100)
-
+        self.canvas.axes.clear()
         self.canvas.axes.imshow(imagen)
         self.canvas.axes.axis('off')
+        self.canvas.draw()
 
         self.scene.addWidget(self.canvas)
 
