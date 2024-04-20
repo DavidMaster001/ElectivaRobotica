@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Leer las imágenes en escala de grises
-Renault = cv2.imread('logo1.png', cv2.IMREAD_GRAYSCALE)
-hyundai = cv2.imread('logo2.png', cv2.IMREAD_GRAYSCALE)
+Renault = cv2.imread('D:\ASUS19-24A\Documents\ElectivaRobotica\ElectivaRobotica\TALLER1\logo1.png', cv2.IMREAD_GRAYSCALE)
+hyundai = cv2.imread('D:\ASUS19-24A\Documents\ElectivaRobotica\ElectivaRobotica\TALLER1\logo2.png', cv2.IMREAD_GRAYSCALE)
 
 # Aplicar umbralización para obtener imágenes binarias
 _, thres_Renault = cv2.threshold(Renault, 240, 255, cv2.THRESH_BINARY)
